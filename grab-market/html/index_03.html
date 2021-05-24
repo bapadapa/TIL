@@ -1,0 +1,146 @@
+<!-- 자바스크립트 삽입 -->
+<!-- 01에서는 상품 리스트를 하드코딩을 하였다.  그걸 없애자!-->
+<html>
+  <head>
+    <title>Grab Market</title>
+    <link rel="stylesheet" href="../css/index_03.css" />
+
+    <!-- 스크립트 삽입. -->
+    <script type="text/javascript">
+      // 다른 것들을 다 실행 ( 로드 하면) 실행해라
+      // 만약 onload를 안하고 이 부분에 사용을하면, 이 위치에서는 아래의 product-list가 없기때문에( 인터프리터 언어) 에러를 발생시킨다.
+
+      //JQuery 사용시 지원하는 형식
+      // $(document).ready(function(){
+      // 소스작성
+      // });
+
+      window.onload = function () {
+        // object 생성
+        var products =
+          {
+            name: "농구공 1호",
+            price: 50000,
+            seller: "Bapa",
+            imageUrl: "../images/products/basketball1.jpeg",
+          },
+          {
+            name: "축구공 1호",
+            price: 30000,
+            seller: "Bapa",
+            imageUrl: "../images/products/soccerball1.jpg",
+          },
+          {
+            name: "키보드 1호",
+            price: 50000,
+            seller: "Bapa",
+            imageUrl: "../images/products/keyboard1.jpg",
+          },
+        ];
+
+        let productsHtml = "";
+
+        //for문
+        for (var i = 0; i < products.length; i++) {
+          // querySelector를 사용하면 1개의 쿼리만 가져올 수 있다.(최초로 발견한 쿼리)
+          let pruduct = products[i];
+          productsHtml +=
+            '<div class="product-card">' +
+            "<div>" +
+            '<img class="product-img" src="' +
+            pruduct.imageUrl +
+            '" alt="' +
+            pruduct.name +
+            '"/>' +
+            " </div>" +
+            ' <div class="product-contents">' +
+            '<span class="product-name">' +
+            pruduct.name +
+            "</span>" +
+            ' <span class="product-price">' +
+            pruduct.price +
+            "</span>" +
+            " </div>" +
+            ' <div class="product-seller">' +
+            '<img class="product-avatar" src="../images/icons/avatar.png" alt="아바타"/>' +
+            " <span>" +
+            pruduct.seller +
+            "</span>" +
+            " </div>" +
+            " </div>";
+        }
+        //foreach문
+        products.forEach(function (product) {
+          productsHtml +=
+            '<div class="product-card">' +
+            "<div>" +
+            '<img class="product-img" src="' +
+            product.imageUrl +
+            '" alt="' +
+            product.name +
+            '"/>' +
+            " </div>" +
+            ' <div class="product-contents">' +
+            '<span class="product-name">' +
+            product.name +
+            "</span>" +
+            ' <span class="product-price">' +
+            product.price +
+            "</span>" +
+            " </div>" +
+            ' <div class="product-seller">' +
+            '<img class="product-avatar" src="../images/icons/avatar.png" alt="아바타"/>' +
+            " <span>" +
+            product.seller +
+            "</span>" +
+            " </div>" +
+            " </div>";
+        });
+        // document.querySelector("#product-list").innerText = productsHtml;
+        // element.innerText; ->이 속성은 element 안의 text 값들만을 가져옵니다.
+        document.querySelector("#product-list").innerHTML = productsHtml;
+        // element.innerHTML; -> innerText와는 달리 innerHTML은 element 안의 HTML이나 XML을 가져옵니다.
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1 class="blind">그랩 마켓</h1>
+      <!-- section == 지역 구분 -->
+      <section>
+        <h1 class="blind">헤더</h1>
+        <div id="header">
+          <div id="header-area">
+            <img src="../images/icons/logo.png" alt="로고" />
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section>
+        <h1 class="blind">메인</h1>
+        <div id="main">
+          <section>
+            <h1 class="blind">베너</h1>
+            <div id="banner">
+              <div>
+                <img src="../images/banners/banner1.png" alt="배너" />
+              </div>
+            </div>
+          </section>
+          <section>
+            <h1>판매되는 상품들</h1>
+            <div id="product-list"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section>
+        <h1 class="blind">풋터</h1>
+        <div id="footer">풋터 로그</div>
+        <div>카피라이트</div>
+      </section>
+    </footer>
+  </body>
+</html>

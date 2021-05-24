@@ -1,0 +1,19 @@
+/* 아이디 */
+#header {
+  height: 64px;
+  background-color: darkgreen;
+}
+#main {
+  margin: 0 auto;
+  height: 100%;
+  width: 1024px;
+  background-color: red;
+}
+#footer {
+  height: 64px;
+  background-color: mediumblue;
+}
+/* 클래스 */
+.blind {
+  display: none;
+}

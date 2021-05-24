@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script type="text/javascript">
+      //  axios.get(URL 주소)
+      //  axios.post(url 주소, data 객체)
+      // axios.get(URL 주소).then(function(){
+      //     //결과값이 정상 호출시 처리 로직
+      // }).catch(function(){
+      //     //결과값 에러시 처리 로직
+      // });
+      const url = "https://jsonplaceholder.typicode.com/todos/1";
+      axios
+        .get(url)
+        .then(function (result) {
+          const status = result.status;
+          const data = result.data;
+          console.log(status);
+          console.log(data);
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+    </script>
+  </head>
+  <body></body>
+</html>
