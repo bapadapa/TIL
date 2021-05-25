@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+		<meta http-equiv="content-Type" content="text/html"; charset=UTF-8>
+		<title>Title</title>
+	</head>
+	
+	<body>
+		<p>Register Student</p>		
+		{% comment %} 서버로 return 하려면, form테그로 만들어야한다. {% endcomment %}
+		<form action="{% url 'student:regCon' %}" method="post">
+		{% comment %} <form action="regCon" method="post"> {% endcomment %}
+		{% csrf_token %}
+			name : <input type="text" name="name"></br>
+			major : <input type="text" name="major"></br>
+			age : <input type="text" name="age"></br>
+			grade : <input type="text" name="grade"></br>
+			gender : <input type="text" name="gender"></br>
+			<input type="submit" name="Register"></br>
+		</form>
+	</body>
+</html>

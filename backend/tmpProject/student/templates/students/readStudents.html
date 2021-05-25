@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+		<meta http-equiv="content-Type" content="text/html"; charset=UTF-8>
+		<title>Title</title>
+	</head>
+	
+	<body>
+		<p>Read Students</p>
+		
+		{% if student_list %}
+		<ol>
+			{% for s in student_list %}
+			<li>
+				<a href="{% url 'student:stuDet' s.s_name %}" >{{s.s_name}}</a>
+				<a href="{% url 'student:stuMod' s.s_name %}">수정</a>
+				<a href="{% url 'student:stuDel' name=s.s_name %}">삭제</a>
+				{% comment %} <a href="">{{s.s_name}}</a>
+				<a href="">수정</a>
+				<a href="">삭제</a> {% endcomment %}
+			</li>
+			{% endfor %}
+		</ol>
+		{% else %}
+			<p>Student: 0</p>
+		{% endif %}
+		
+		</br>
+		
+		<a href="{% url 'student:reg' %}">신규학생등록</a>
+		
+	</body>
+</html>

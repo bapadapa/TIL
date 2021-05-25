@@ -11,6 +11,5 @@ class Job(models.Model):
          db_table = "jobs"
 
 
-
 class Employees(models.Model):
     pass
