@@ -22,15 +22,24 @@
    - [리눅스](##리눅스)
    - [컴퓨터 구조](##컴퓨터구조)
 2. [Python](#Python)
-3. [JavaScript](#JavaScript)
-4. [React](#React)
-5. [DataBase](#DataBase)
+3. [AI/ML/Bigdata](#AI/ML/Bigdata)
+4. [Backend](#Backend)
+
+   - [Django](#Django)
+
+5. [Frontend](#Frontend)
+
+   - [React](#React)
+   - [JavaScript](#JavaScript)
+
+6. [DataBase](#DataBase)
    - [Oracle](###Oracle)
 
 - [참고자료들](#참고자료들)
   - [도서](####도서)
   - [사이트](####사이트)
 - [프로젝트들](프로젝트들)
+- [자격증들](#자격증들)
 
 ---
 
@@ -60,19 +69,35 @@
 
 ---
 
-# JavaScript
+# AI/ML/Bigdata
 
-- 개념&이론
-
-- 코드 및 구현
+- [AI_ML_Bigdata](./AI_ML_Bigdata)🔥
 
 ---
 
-# React
+- # Backend
 
-- 개념&이론
+  - ## Django
 
-- 코드 및 구현
+    - 개념&이론
+
+    - 코드 및 구현
+
+---
+
+# Frontend
+
+- # React
+
+  - 개념&이론
+
+  - 코드 및 구현
+
+- ## JavaScript
+
+  - 개념&이론
+
+  - 코드 및 구현
 
 ---
 
@@ -98,9 +123,34 @@
 
 - #### 도서
   - 📚 (📖 - 공부 중, 📒 - 읽기 끝, 📕 - 정리 끝)
+  - 딥러닝 머신러닝을 위한 파이썬 넘파이 📖
 - #### 사이트
   - [객체지향 개발 5대 원리:SOLID](https://www.nextree.co.kr/p6960/)
 
 ---
 
 # 프로젝트들
+
+# 자격증들
+
+- 취득 : 🎉
+
+  - OCJP
+  - DSAC
+  - ICDL
+
+- 공부중 :📖
+  - 정보처리기사 (실기)
+    - 신청기간 : 6월 14일
+    - 시험일자 : 7월 10일
+  - 빅데이터분석기사 (필기)
+    - 신청기간 : 9.6 ~ 9.10
+    - 수험표발급 : 9.24
+    - 시험일자 : 10.2(토)
+  - 빅데이터분석기사 (실기)
+    - 신청기간 : 11.8 ~ 11.12
+    - 수험표발급 : 11.19
+    - 시험일자 : 12.4(토)
+  - ADSP/ADP (필기)
+    - 신청기간 : 8.2 ~ 8.6
+    - 시험 일자 : 8.29(일)
