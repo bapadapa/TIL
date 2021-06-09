@@ -17,27 +17,32 @@
 # 목차
 
 1. [CS](#CS)
-   - [알고리즘](##알고리즘)
-   - [OS](##OS)
-   - [리눅스](##리눅스)
-   - [컴퓨터 구조](##컴퓨터구조)
-2. [Python](#Python)
-3. [AI/ML/Bigdata](#AI/ML/Bigdata)
-4. [Backend](#Backend)
 
-   - [Django](#Django)
+   - [Algorithm](./Algorithm)
+     - [백준](./Algorithm/BaekJoon)
+     - [프로그래머스](./Algorithm/Programmers)
+   - OS
+   - 리눅스
+   - 컴퓨터 구조
 
-5. [Frontend](#Frontend)
+2. [DataSicence](./DataSicence)
+   - [ML](./DataSicence/ML)
+   - [Python](./DataSicence/Python)
+   - [R](./DataSicence/R)
+3. [Backend](./Backend)
 
-   - [React](#React)
-   - [JavaScript](#JavaScript)
+   - [Django](./Backend/Django)
 
-6. [DataBase](#DataBase)
-   - [Oracle](###Oracle)
+4. [Frontend](./Frontend)
+
+   - [React](./Frontend/React)
+
+5. [DataBase](./Database)
+   - [Oracle](./Database/Oracle)
 
 - [참고자료들](#참고자료들)
-  - [도서](####도서)
-  - [사이트](####사이트)
+  - 도서
+  - 사이트
 - [프로젝트들](프로젝트들)
 - [자격증들](#자격증들)
 
@@ -59,46 +64,6 @@
 
 ## 컴퓨터구조
 
----
-
-# Python
-
-- 개념&이론
-
-- 코드 및 구현
-
----
-
-# AI/ML/Bigdata
-
-- [AI_ML_Bigdata](./AI_ML_Bigdata)🔥
-
----
-
-- # Backend
-
-  - ## Django
-
----
-
-# Frontend
-
-- # React
-
-- ## JavaScript
-
----
-
-# Java
-
----
-
-# DataBase
-
-- ### Oracle
-
----
-
 # 참고자료들
 
 - #### 도서
@@ -106,6 +71,7 @@
   - 딥러닝 머신러닝을 위한 파이썬 넘파이 📖
 - #### 사이트
   - [객체지향 개발 5대 원리:SOLID](https://www.nextree.co.kr/p6960/)
+  - [PEP 8 (번역)](https://luavis.me/python/python-convention)
 
 ---
 
