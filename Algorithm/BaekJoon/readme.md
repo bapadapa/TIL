@@ -1,5 +1,4 @@
-# 파이썬으로 풀어보는 백준 알고리즘
+# 프로그래머스
 
-[Bronze](./Bronze)
-[Silver](./Silver)
-[Gold](./Gold)
+- [CPP](./Algo_CPP)
+- [Python](./Algo_Python)
