@@ -1,11 +1,15 @@
-```remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
-remote: error: File DataSicence/ML/IITP/data/us_new_born_2million.csv is 110.08 MB; this exceeds GitHub's file sizTo https://github.com/bapadapa/TIL.git
- ! [remote rejected]   master -> master (pre-receive hook declined)
-error: failed to push some refs to 'https://github.com/bapadapa/TIL.git'
-```
+- 에러 내용
 
-- git에 올리려는 파일이 100mb이상인 경우!
-- 위 에러의 경우 `DataSicence/ML/IITP/data/us_new_born_2million.csv`가 `110.08 MB`이기 때문에 발생!
+  ```remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+  remote: error: File DataSicence/ML/IITP/data/us_new_born_2million.csv is 110.08 MB; this exceeds GitHub's file sizTo https://github.com/bapadapa/TIL.git
+  ! [remote rejected]   master -> master (pre-receive hook declined)
+  error: failed to push some refs to 'https://github.com/bapadapa/TIL.git'
+  ```
+
+- 발생 이유
+
+  - git에 올리려는 파일이 100mb이상인 경우!
+  - 위 에러의 경우 `DataSicence/ML/IITP/data/us_new_born_2million.csv`가 `110.08 MB`이기 때문에 발생!
 
 - 해결방법
 
@@ -26,8 +30,8 @@ error: failed to push some refs to 'https://github.com/bapadapa/TIL.git'
 
      - git pull origin master --allow-unrelated-histories
 
-  4. 다시 push를 해준다!
+     - 에러 속에 에러!
+       - 위 명령어를 치라고 해서 쳤는데 `warning: Cannot merge binary files`에러가 뜸..
+       - 그래서 `git push --force origin master` 로 강제 push를 해주니 성공함. .ㅎ
 
-- 에러 속에 에러!
-  - 3번 단계에서 저렇게 명령어를 치라고 해서 쳤는데 `warning: Cannot merge binary files`에러가 뜸..
-    - 그래서 `git push --force origin master` 로 강제 push를 해주니 성공함. .ㅎ
+  4. 다시 push를 해준다!
