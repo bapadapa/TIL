@@ -1,1 +1,7 @@
-# 작업하면서 에러 발생 및 문제들 정리하기!
+# 깃을 잘 써보자!
+
+## 사용법
+
+## 에러
+
+- [Large Files Detected](./LargeFilesDetected)
