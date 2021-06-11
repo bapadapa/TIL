@@ -1,4 +1,4 @@
-# 목차
+# **목차**
 
 <details>
 <summary>목차들</summary>  
@@ -8,12 +8,18 @@
 - [블록구분](#블록구분)
 - [주석](#주석)
 - [조건문](#조건문)
+- [변수](#변수)
+- [자료형](#자료형)
 </div>
 </details>
+<br>
 
 ---
 
-# 세미콜론 ( semicolon ) ;
+<br>
+<br>
+
+# **세미콜론**
 
 <details>
 <summary>내용</summary>
@@ -27,10 +33,10 @@
 
 </div>
 </details>
+<br>
+<br>
 
-[목차](#목차)
-
-# 블록구분
+# **블록구분**
 
 <details>
 <summary>내용</summary>
@@ -55,10 +61,10 @@
 
 </div>
 </details>
+<br>
+<br>
 
-[목차](#목차)
-
-# 주석
+# **주석**
 
 <details>
 <summary>내용</summary>
@@ -86,9 +92,7 @@
 </div>
 </details>
 
-[목차](#목차)
-
-# 조건문
+# **조건문**
 
 <details>
 <summary>내용</summary>
@@ -119,10 +123,10 @@
 - 위와 같이 elif는 여러개를 만들 수 있다.
 </div>
 </details>
+<br>
+<br>
 
-[목차](#목차)
-
-# 변수
+# **변수**
 
 <details>
 <summary>내용</summary>
@@ -155,10 +159,10 @@
 
 </div>
 </details>
+<br>
+<br>
 
-[목차](#목차)
-
-# 자료형
+# **자료형**
 
 <details>
 <summary>내용</summary>
@@ -195,7 +199,7 @@
       f = 1.0# float
     ```
 
-### 논리형
+###
 
 - 논리 연산자로, True,False로 이루어진 자료형
   - bool / boolean 타입이다.
@@ -213,10 +217,10 @@
 
 </div>
 </details>
+<br>
+<br>
 
-[목차](#목차)
-
-# 이름
+# **이름**
 
 <details>
 <summary>내용</summary>
@@ -224,5 +228,5 @@
 내용넣기
 </div>
 </details>
-
-[목차](#목차)
+<br>
+<br>

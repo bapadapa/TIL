@@ -3,7 +3,7 @@ setwd(workspace)
 ##getwd()
 
 ## which server you wanna use
-setRepositories( ind = 1:8 )
+setRepositories( ind = c(1:8) )
 
 ## install "gglplot2" package
 ## download package

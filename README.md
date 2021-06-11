@@ -69,6 +69,7 @@
 <details>
 <summary>6.나머지</summary>
 <div markdown="1">
+
 - [개발 외의 것들](./Others)
 - [참고 도서 및 사이트](#참고자료들)
 - [프로젝트들](#프로젝트들)
