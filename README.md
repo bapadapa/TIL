@@ -16,53 +16,68 @@
 
 # 목차
 
-1. [CS](#CS)
+<details>
+<summary>1. CS</summary>
+<div markdown="1">
 
-   - [Algorithm](./Algorithm)
-     - [백준](./Algorithm/BaekJoon)
-     - [프로그래머스](./Algorithm/Programmers)
-   - OS
-   - 리눅스
-   - 컴퓨터 구조
+- [Algorithm](./Algorithm)
+  - [백준](./Algorithm/BaekJoon)
+  - [프로그래머스](./Algorithm/Programmers)
+- OS
+- 리눅스
+- 컴퓨터 구조
 
-2. [DataSicence](./DataSicence)
-   - [ML](./DataSicence/ML)
-   - [Python](./DataSicence/Python)
-   - [R](./DataSicence/R)
-3. [Backend](./Backend)
+</div>
 
-   - [Django](./Backend/Django)
+</details>
 
-4. [Frontend](./Frontend)
+<details>
+<summary>2.DataSicence</summary>
+<div markdown="1">
 
-   - [React](./Frontend/React)
+- [ML](./DataSicence/ML)
+- [Python](./DataSicence/Python)
+- [R](./DataSicence/R)
 
-5. [DataBase](./Database)
-   - [Oracle](./Database/Oracle)
+</div>
+</details>
 
-- [참고자료들](#참고자료들)
-  - 도서
-  - 사이트
-- [프로젝트들](프로젝트들)
+<details>
+<summary>3.Backend</summary>
+<div markdown="1">
+
+- [Django](./Backend/Django)
+
+</div>
+</details>
+<details>
+<summary>4.Frontend</summary>
+<div markdown="1">
+
+- [React](./Frontend/React)
+
+</div>
+</details>
+<details>
+<summary>5.DataBase</summary>
+<div markdown="1">
+
+- [Oracle](./Database/Oracle)
+
+</div>
+</details>
+<details>
+<summary>6.나머지</summary>
+<div markdown="1">
+
+- [참고 도서 및 사이트](#참고자료들)
+- [프로젝트들](#프로젝트들)
 - [자격증들](#자격증들)
 
+</div>
+</details>
+
 ---
-
-# CS
-
-## 알고리즘
-
-- 백준 📚
-  - [C++](https://github.com/bapadapa/BeakJoon)
-  - [Python](https://github.com/bapadapa/Algorithm_Python)
-- 프로그래머스 📚
-  - [C++](https://github.com/bapadapa/programmers)
-
-## OS
-
-## 리눅스
-
-## 컴퓨터구조
 
 # 참고자료들
 
