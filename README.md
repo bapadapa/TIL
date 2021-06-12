@@ -62,6 +62,8 @@
 - #### 사이트
   - [객체지향 개발 5대 원리:SOLID](https://www.nextree.co.kr/p6960/)
   - [PEP 8 (번역)](https://luavis.me/python/python-convention)
+  - [수식 생성](https://latex.codecogs.com/)
+  - [데이터 사이언스 스쿨](https://datascienceschool.net/intro.html)
 
 ---
 

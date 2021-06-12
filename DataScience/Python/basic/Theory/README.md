@@ -79,7 +79,7 @@
 - 사칙연산자
   |연산자|내용|사용방법|연산자|
   |------|---|---|-|
-  |+ | 덧셈 연산자이다. |ans = A+ B |![수식](https://latex.codecogs.com/gif.latex?ans%20%3D%20a+b)|
+  |+ | 덧셈 연산자이다. |ans = A+ B |![수식](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%20%5Cbg_white%20%5Cinline%20ans%20=%20a+b%20)|
   |- | 뺄셈 연산자이다. |ans = A - B |![수식](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%20%5Cbg_white%20%5Cinline%20ans%20=%20a-b%20)|
   |/ | 나눗셈 연산자이다. |ans = A / B|![수식](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%20%5Cbg_white%20%5Cinline%20ans%20=%20a%b%20)|
   |//| 나눗셈 연산자이다. |'/'와 다른점은 소숫점 아래는 버린다. ||
