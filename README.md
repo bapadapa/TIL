@@ -16,9 +16,7 @@
 
 # 목차
 
-<details>
-<summary>1. CS</summary>
-<div markdown="1">
+# 1.CS
 
 - [Algorithm](./Algorithm)
   - [백준](./Algorithm/BaekJoon)
@@ -27,58 +25,34 @@
 - 리눅스
 - 컴퓨터 구조
 
-</div>
+# [2.DataSicence](./DataScience)
 
-</details>
+- [ML](./DataScience/ML)
+- [Python](./DataScience/Python)
+- [R](./DataScience/R)
 
-<details>
-<summary>2.DataSicence</summary>
-<div markdown="1">
-
-- [ML](./DataSicence/ML)
-- [Python](./DataSicence/Python)
-- [R](./DataSicence/R)
-
-</div>
-</details>
-
-<details>
-<summary>3.Backend</summary>
-<div markdown="1">
+# [3.Backend](./Backend)
 
 - [Django](./Backend/Django)
 
-</div>
-</details>
-<details>
-<summary>4.Frontend</summary>
-<div markdown="1">
+# [4.Frontend](./Frontend)
 
 - [React](./Frontend/React)
 
-</div>
-</details>
-<details>
-<summary>5.DataBase</summary>
-<div markdown="1">
+# [5.Database](./Database)
 
 - [Oracle](./Database/Oracle)
 
-</div>
-</details>
-<details>
-<summary>6.나머지</summary>
-<div markdown="1">
+# [6.나머지](./Others)
 
-- [개발 외의 것들](./Others)
-- [참고 도서 및 사이트](#참고자료들)
-- [프로젝트들](#프로젝트들)
-- [자격증들](#자격증들)
-
-</div>
-</details>
+- [GitHub](./Others/Git)
+- [MarkDown](./Others/MarkDown)
+  <br>
+  <br>
 
 ---
+
+> [참고 도서 및 사이트](#참고자료들) <br> [프로젝트들](#프로젝트들) <br> [자격증들](#자격증들) <br>
 
 # 참고자료들
 

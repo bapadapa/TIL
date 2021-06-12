@@ -1,0 +1,1 @@
+- [javascript 간단 문법](./Theory)
