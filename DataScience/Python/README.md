@@ -1,2 +1,5 @@
 - [순수 파이썬](./basic)
+- [라이브러리](./Library)
+  - [numpy](./Library/numpy)
+  - [pandas](./Library/pandas)
 - [IITP](./IITP)

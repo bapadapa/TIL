@@ -1,0 +1,4 @@
+- [numpy](./Library/numpy)
+  - 선형대수학 라이브러리
+- [pandas](./Library/pandas)
+  - 데이터프레임사용하기 좋게 만들어주는 라이브러리
