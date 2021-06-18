@@ -44,7 +44,7 @@
   ```
   - 관례적으로 numpy는 `np`로 임포트 해준다.
 
-## ndarray(N-dimensional Array) 구조
+## 구조
 
 - 데이터 자체를 나타낸다.
 - data-type은 array의 단일 고정 크기 요소의 레이아웃 정보이다.
@@ -53,7 +53,7 @@
   - 연속적인 메모리 배치를 가진다!
 - numpy 모듈의 array함수를 사용하여 생성한다.
 
-## ndarray(N-dimensional Array) 차원
+## 차원
 
 - ndarray는 1차원 배열의 특징을 가지며 `차원`, `타입` , `요소`를 갖고 있다.
 - 2차원은 1차원 여러개의 배열로 구성된다.
@@ -81,7 +81,7 @@
         ])
     ```
 
-## ndarray(N-dimensional Array) 벡터 연산
+## 벡터 연산
 
 - ```python
     oneDimArray = np.array([1,2,3])
@@ -98,7 +98,7 @@
   - `결과값 : [3,6,9]`
     - [2,4,6] + [1,2,3]
 
-## ndarray(N-dimensional Array) 속성
+## 속성
 
 - np.ndim
 
@@ -138,7 +138,7 @@
     ```
     - 결과값 `[[1 4] [2 5] [3 6]]`
 
-## ndarray(N-dimensional Array) 인덱싱 및 조회(슬라이싱)
+## 인덱싱 및 조회(슬라이싱)
 
 ### 인덱싱
 
@@ -160,7 +160,7 @@
   # [2,3] 출력 1번째 행 2번째 열부터 끝까지 출력
   print(twoDimArray[0,1:])
   ```
-  - [시작 : 끝 : 간격]
+  - [시작 : 끝 : 간격(step)]
     - 시작 기본값 : 0
     - 끝 기본값 : -1 (마지막)
     - 간격 기본값 : 1 (순방향) , -1 : (역순)
@@ -183,7 +183,7 @@
   - 결과값
     - `array([3, 4])`
 
-## ndarray(N-dimensional Array) 데이터 타입
+## 데이터 타입
 
 - 동일한 데이터 타입을 갖는다.
 
@@ -191,14 +191,27 @@
 
 - 종류
 
-  - | 종류       | 설명                 |
-    | ---------- | -------------------- |
-    | np.int8    | 8bit 정수 타입       |
-    | np.int16   | 16bit 정수 타입      |
-    | np.int32   | 32bit 정수 타입      |
-    | np.float32 | 32bit 부동 소수 타입 |
-    | np.float16 | 16bit 부동 소수 타입 |
-    | np.object  | 파이썬 객체 타입     |
+  - | 종류         | 설명                                                                                |
+    | ------------ | ----------------------------------------------------------------------------------- |
+    | `bool_`      | Boolean (True or False) stored as a byte                                            |
+    | `int_`       | Default integer type (same as C `long`; normally either `int64` or `int32`)         |
+    | `intc`       | Identical to C `int` (normally `int32` or `int64`)                                  |
+    | `intp`       | Integer used for indexing (same as C `ssize_t`; normally either `int32` or `int64`) |
+    | `int8`       | Byte (-128 to 127)                                                                  |
+    | `int16`      | Integer (-32768 to 32767)                                                           |
+    | `int32`      | Integer (-2147483648 to 2147483647)                                                 |
+    | `int64`      | Integer (-9223372036854775808 to 9223372036854775807)                               |
+    | `uint8`      | Unsigned integer (0 to 255)                                                         |
+    | `uint16`     | Unsigned integer (0 to 65535)                                                       |
+    | `uint32`     | Unsigned integer (0 to 4294967295)                                                  |
+    | `uint64`     | Unsigned integer (0 to 18446744073709551615)                                        |
+    | `float_`     | Shorthand for `float64`.                                                            |
+    | `float16`    | Half precision float: sign bit, 5 bits exponent, 10 bits mantissa                   |
+    | `float32`    | Single precision float: sign bit, 8 bits exponent, 23 bits mantissa                 |
+    | `float64`    | Double precision float: sign bit, 11 bits exponent, 52 bits mantissa                |
+    | `complex_`   | Shorthand for `complex128`.                                                         |
+    | `complex64`  | Complex number, represented by two 32-bit floats                                    |
+    | `complex128` | Complex number, represented by two 64-bit floats                                    |
 
 - INF와 nan
   - np.inf (infinity)
@@ -208,7 +221,7 @@
     - 정의 할 수 없는 숫자를 표현한다.
     - 0/0 을 연산하면, `nan`이 나온다.
 
-## ndarray(N-dimensional Array) 배열 생성
+## 배열 생성
 
 - 대부분의 배열선언시, (dtype= '`자료형`')을 이용하여 자료형은 지정해 줄 수 있다.
 
@@ -420,50 +433,85 @@
   - 결과
     - `array([0, 1, 2, 3, 4, 0, 1, 2, 3, 4])`
 
-## Numpy object 연결함수(concatenate)를 통한 loop 연산이해
+### 함수들
 
-- concatenate : array를 연결하는 함수로 여러 array를 한번에 연결
+- `np.concatenate`
 
+  - array를 연결하는 함수로 여러 array를 한번에 연결
   - axis 옵션을 통해 row, column기준으로 연결 가능
   - 예시
-
     - 코드
-
       - ```python
         c1 = np.arange(1,5)
         c2 = np.arange(5,9)
         c3 = np.arange(9,11)
         np.concatenate((c1,c2,c3))
         ```
-
     - 결과
       - `array([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])`
 
-- 함수들
-
-  - hstack
+- 행 연결 (col 추가)
+  - `np.hstack`
     - 행 수가 같은 2개 이상의 배열을 옆으로 연결한다.
-  - vstack
-    - 열 수가 같은 2개 이상의 배열을 위아래로 연결한다.
-  - dstack
-    - 깊이 방향으로 배열을 합친다.
-    - 개인적 이해
-      1. a,b배열이 있다면, a의 1행 b의 1행을 `hstack`으로 묶는다
-      2. 위 과정을 순차적으로한다.
-      3. 과정이 끝나면 모든 배열을 `vstack`으로 묶어준다.
-  - stack
-
-    - 사용자가 지정한 차원(축으로) 배열을 연결한다.
-    - axis를 이용하여 묶는 방법을 결정한다.
-
-  - r\_
+  - `np.r\_`
     - hstack과 동일한 기능을한다
     - 차이점
       - ()가 아닌 []를 이용하여 배열을 입력한다.
-  - c\_
+- 열 연결 (row 추가)
+  - `np.vstack`
+    - 열 수가 같은 2개 이상의 배열을 위아래로 연결한다.
+  - `np.c\_`
     - vstack과 동일한 기능을한다
     - 차이점
       - ()가 아닌 []를 이용하여 배열을 입력한다.
-  - tile
-    - 동일한 배열을 반복하여 연결해줌.
-    - 파이썬함수 repeat과 유사.
+- `np.dstack`
+  - 깊이 방향으로 배열을 합친다.
+  - 개인적 이해
+    1. a,b배열이 있다면, a의 1행 b의 1행을 `hstack`으로 묶는다
+    2. 위 과정을 순차적으로한다.
+    3. 과정이 끝나면 모든 배열을 `vstack`으로 묶어준다.
+- `np.stack`
+  - 사용자가 지정한 차원(축으로) 배열을 연결한다.
+  - axis를 이용하여 묶는 방법을 결정한다.
+- `np.tile`
+  - 동일한 배열을 반복하여 연결해줌.
+  - 파이썬함수 repeat과 유사.
+- `np.split`
+  - Array 자르기!
+  - ```ipython
+    np.split(arr, integer) # integer 등분
+    np.split(arr, 1-D array) # 구간 [n, m] : 0 ~ n-1, n ~ m - 1, m ~ len(arr)  ( index 기준 )
+    ```
+  - 예시
+    - 코드
+      - ```ipython
+        x = [1, 2, 3, 99, 99, 3, 2, 1,1, 2, 3, 99, 99, 3, 2, 1]
+        x1, x2, x3 ,x4 = np.split(x, [3,5,7])
+        print(x1, x2, x3,x4)
+        ```
+    - 결과값
+      - `[1 2 3] [99 99] [3 2] [ 1 1 2 3 99 99 3 2 1]`
+
+## 벡터 계산
+
+- 속도
+  - '%timeit'을 이용하여 Operator(+,-,\*,/ ...)를 사용한 것 보다 np.함수를 사용한게 약 `2000배` 빨랐다.
+  - ```ipython
+    big_array = np.random.randint(1, 100, size=1000000)
+    %timeit compute_reciprocals(big_array)
+    %timeit (1.0 / big_array)
+    ```
+  - `8.14 s ± 1.02 s per loop (mean ± std. dev. of 7 runs, 1 loop each) 3.79 ms ± 1.09 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)`
+
+### - 산술연산
+
+| Operator | Equivalent ufunc  | Description                           |
+| -------- | ----------------- | ------------------------------------- |
+| `+`      | `np.add`          | Addition (e.g., `1 + 1 = 2`)          |
+| `-`      | `np.subtract`     | Subtraction (e.g., `3 - 2 = 1`)       |
+| `-`      | `np.negative`     | Unary negation (e.g., `-2`)           |
+| `*`      | `np.multiply`     | Multiplication (e.g., `2 * 3 = 6`)    |
+| `/`      | `np.divide`       | Division (e.g., `3 / 2 = 1.5`)        |
+| `//`     | `np.floor_divide` | Floor division (e.g., `3 // 2 = 1`)   |
+| `**`     | `np.power`        | Exponentiation (e.g., `2 ** 3 = 8`)   |
+| `%`      | `np.mod`          | Modulus/remainder (e.g., `9 % 4 = 1`) |
