@@ -234,4 +234,3 @@ sum <- 0
 for (i in length(data)){
     sum <- sum+ ifelse(i %% 2 == 0,data[i],-data[i])
 }
-sum
