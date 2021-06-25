@@ -234,3 +234,157 @@ sum <- 0
 for (i in length(data)){
     sum <- sum+ ifelse(i %% 2 == 0,data[i],-data[i])
 }
+
+
+## 반복문
+vector <- 1:200
+
+s <- 0
+
+for(v in vector){
+    if(v%%3 == 0){
+        s = s+v
+    }
+}
+s
+
+sum(vector)
+vector <- 0:200
+s<- 0
+
+# 길이를 가지고 하는 것 이니 1:length(vector) 과 같이
+# 범위로 해야한다!
+for(i in 1:length(vector)){
+    if(vector[i]%%3 == 0){
+        s = s+vector[i]
+    }
+}
+s 
+
+
+# m의 열의 합을 구하시오
+m <- matrix(1:100,3) 
+# 방법 1
+ans <- NULL
+for(i in 1:dim(m)[2]){
+    ans = c(ans,sum(m[,i]))    
+}
+ans
+# 방법 2
+ans <- NULL
+for(i in 1:dim(m)[2]){
+    ans = cbind(ans,sum(m[,i]))
+}
+ans
+
+# 1:99 ,3인 메트릭스의 열의 합을구하고
+# 3,11의 matrix로 만드시오
+m <- matrix(1:99,3) 
+ans <- NULL
+for (i in 1:dim(m)[2]){
+    ans = cbind(ans,sum(m[,i]))
+}
+tmp <- NULL
+result <- NULL
+for (i in 1:dim(m)[2]){
+    tmp <- rbind(tmp,ans[i])
+    if(!i%%3){
+        result <- cbind(result,tmp)
+        tmp<-NULL
+    }
+}
+
+m_new <- result
+m_new
+v = sample(20:40 ,10,replace = F)
+sort(v,decreasing = T)
+v[order(v)]
+
+names(iris)
+iris[order(iris$Sepal.Length),]
+
+a <- sample(1:100 , 100,replace =T)
+b <- sample(1:100 , 100,replace =T)
+c <- sample(1:100 , 100,replace =T)
+d <- sample(1:100 , 100,replace =T)
+e <- sample(1:100 , 100,replace =T)
+
+df = data.frame(a,b,c,d,e)
+col_name = NULL
+for(i in 1:nrow(df)){
+    tmp <- names(df)[order(as.matrix(df)[i,])[4]]
+    col_name <- c(col_name,tmp)
+}
+
+df <- data.frame(df,col_name)
+df
+df[3,]
+df[3,which(names(df) == df[3,"col_name"])]
+
+secondScore <-NULL
+for (i in 1:nrow(df)){
+    secondScore <- c(secondScore, df[i,which(names(df) == df[i,"col_name"])])
+}
+secondScore <- data.frame(secondScore)
+secondScore
+
+
+# -------------------------------------------------
+
+m <- matrix(1:99,3)
+#방법 1
+m_col_sum = NULL
+for (i in 0:10){
+    tmp1 <- NULL
+    for (j in 1:3){
+        tmp2 <- sum(m[,i*3+j])
+        tmp1 <- c(tmp1,tmp2)
+    }
+    m_col_sum = cbind(m_col_sum,tmp1)
+}
+m_col_sum
+#방법2
+matrix(apply(m,2,sum),3)
+
+##로또~
+sample(1:45, 6  , replace = FALSE, prob = NULL)
+lotto <- NULL
+for( i in 1:6){
+    x = sample(1:45, 1, replace = FALSE, prob = NULL)
+    if( x == lotto or lotto == NULL){
+        lotto <- c(lotto,x)
+    }
+    
+}
+lotto
+install.packages('sqldf')
+library(sqldf)
+names()
+
+iris2 <- iris
+names(iris2) <- gsub('\\.','_',names(iris2))
+# sql 문 바로 넣기
+sqldf('select Species,avg(Sepal_Length) from iris2 group by Species')
+# stmt변수를 만들어서 사용하기
+stmt <- 'select Species,avg(Sepal_Length) from iris2 group by Species'
+sqldf(stmt)
+
+stmt <- 'select * from iris2 where Sepal_Length > 0.3'
+sqldf(stmt)
+x <- c('sepal_length','patal_length','sepal_width')
+paste(x,collpase = ',')
+
+unique(iris$Species)
+
+iris_cnt <- NULL
+for( i in unique(iris$Species)){
+    tmp <- data.frame(species=i,cnt = nrow(iris[iris$Species == i,]))
+    iris_cnt <- rbind(iris_cnt,tmp)
+}
+iris_cnt
+sqldf('select species, count(*) as cnt from iris group by species')
+
+iris2[iris2$Sepal_Length > mean(iris2$Sepal_Length),'Sepal_Length']
+sqldf('select sepal_length from iris2 where sepal_length > (select avg(sepal_length) from iris2)')
+
+sqldf('select species, count(sepal_length) as cnt, sum(sepal_length) as sum,avg(sepal_length)as avg , std(sepal_length) as std from iris2')
