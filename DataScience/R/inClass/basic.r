@@ -683,4 +683,5 @@ mapply(function(i,s) { sprintf("%d%s",i,s)} , 1:3 ,  c('a','b','c'))
 mapply(function(x,y){x*y},1:4,5:8)
 
 x <- sample(letters,100,replace = T)
-
+lapply(x, function(x){which(letters == x)})
+do.call(c,lapply(x, function(x){which(letters == x)}))
