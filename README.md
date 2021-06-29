@@ -18,7 +18,7 @@
 
 # 1.CS
 
-- [Algorithm](./Algorithm)
+- [Algorithm](./Algorithm)📚
   - [백준](./Algorithm/BaekJoon)
   - [프로그래머스](./Algorithm/Programmers)
 - OS
@@ -27,9 +27,9 @@
 
 # [2.DataSicence](./DataScience)
 
-- [ML](./DataScience/ML)
-- [Python](./DataScience/Python)
-- [R](./DataScience/R)
+- [ML](./DataScience/ML)🔥
+- [Python](./DataScience/Python)🔥
+- [R](./DataScience/R)🔥
 
 # [3.Backend](./Backend)
 
@@ -41,24 +41,25 @@
 
 # [5.Database](./Database)
 
-- [Oracle](./Database/Oracle)
+- [Oracle](./Database/Oracle)🧠
 
 # [6.나머지](./Others)
 
-- [GitHub](./Others/Git)
-- [MarkDown](./Others/MarkDown)
+- [GitHub](./Others/Git)🧠
+- [MarkDown](./Others/MarkDown)🧠
   <br>
   <br>
 
 ---
 
-> [참고 도서 및 사이트](#참고자료들) <br> [프로젝트들](#프로젝트들) <br> [자격증들](#자격증들) <br>
+> [참고 도서 및 사이트](#참고자료들) <br> [프로젝트들](#프로젝트들)🧠 <br> [자격증들](#자격증들) <br>
 
 # 참고자료들
 
 - #### 도서
-  - 📚 (📖 - 공부 중, 📒 - 읽기 끝, 📕 - 정리 끝)
-  - 딥러닝 머신러닝을 위한 파이썬 넘파이 📖
+  - 📚 - 공부 예정 📖 - 공부 중, 📒 - 읽기 끝, 📕 - 정리 끝
+  - 딥러닝 머신러닝을 위한 파이썬 넘파이 📒
+  - 정보처리기사 실기(시나공)📖
 - #### 사이트
   - [객체지향 개발 5대 원리:SOLID](https://www.nextree.co.kr/p6960/)
   - [PEP 8 (번역)](https://luavis.me/python/python-convention)
