@@ -60,6 +60,7 @@
   - 📚 - 공부 예정 📖 - 공부 중, 📒 - 읽기 끝, 📕 - 정리 끝
   - 딥러닝 머신러닝을 위한 파이썬 넘파이 📒
   - 정보처리기사 실기(시나공)📖
+  - Do it쉽게배우는 R 데이터 분석 📖
 - #### 사이트
   - [객체지향 개발 5대 원리:SOLID](https://www.nextree.co.kr/p6960/)
   - [PEP 8 (번역)](https://luavis.me/python/python-convention)
