@@ -28,6 +28,7 @@
 ## 크롤링
 from os import replace
 import re
+from typing import Tuple
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
@@ -204,6 +205,15 @@ from pathos.multiprocessing import ProcessingPool as Pool #pip install pathos
 Pool
 #%%
 # %%
+
+#############################################################################
+#
+# 1. 트위치 크롤링
+# 2. 크롤링한 데이터 cvs로 저장
+# 3. 크롤링한 데이터 정제후 csv로 저장
+#
+#############################################################################
+
 import threading
 import re
 from selenium import webdriver
@@ -213,144 +223,167 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.keys import Keys
 import datetime as dt
 import pandas as pd
+import numpy as np
 import time
 
-
-def crawling(startDate,untilDate,endDate) :
+# 크롤링 ( 1회전만함 , 함수 외부에서 for문을 돌리는중)
+def crawling(query,startD,untilD,endDate,totaltweets,cnt) :
     driver = webdriver.Chrome()
-    count = 0
-    # 크롤링할 단어
-    query = '코로나'
-    totaltweets = []
-    while not endDate == startDate and count < 50:
-        # 인기글
-        # url='https://twitter.com/search?q='+query+'%20since%3A'+str(startDate)+'%20until%3A'+str(untilDate)+'&amp;amp;amp;amp;amp;amp;lang=eg'
-        # 최신글
-        url = 'https://twitter.com/search?q='+query+'%20since%3A'+str(startDate)+'%20until%3A'+str(untilDate)+'&f=live'
-        driver.get(url)
-        html = driver.page_source
-        soup = BeautifulSoup(html,'html.parser')
+    count = 0 
 
-        lastHeight = driver.execute_script("return document.body.scrollHeight")
+    if(endDate<startD):
+        time.sleep(60)
+        driver.close()        
+        return
+    # 인기글
+    # url='https://twitter.com/search?q='+query+'%20since%3A'+str(startDate)+'%20until%3A'+str(untilDate)+'&amp;amp;amp;amp;amp;amp;lang=eg'
+    # 최신글
+    url = 'https://twitter.com/search?q='+query+'%20since%3A'+str(startD)+'%20until%3A'+str(untilD)+'&f=live'
+    driver.get(url)
+    html = driver.page_source
+    soup = BeautifulSoup(html,'html.parser')        
+    lastHeight = driver.execute_script("return document.body.scrollHeight")
 
-        # time.sleep(2)
-        while True:
-            print(startDate)
-            tweets = str(soup.find_all("div", {"class": "css-901oao r-1fmj7o5 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"}))
-            tweets = re.sub('<.+?>', '', tweets, 0).strip()
-            tweets = re.sub('\n', '', tweets, 0).strip()
-
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-
-            time.sleep(1)
-
-            newHeight = driver.execute_script("return document.body.scrollHeight")
-
-            if newHeight != lastHeight:
-                html = driver.page_source
-                soup = BeautifulSoup(html,'html.parser')
-                tweets = str(soup.find_all("div", {"class": "css-901oao r-1fmj7o5 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"}))
-                tweets = re.sub('<.+?>', '', tweets, 0).strip()
-                tweets = re.sub('\n', '', tweets, 0).strip()
-                # wordfreq =len(tweets)
-                totaltweets.append(tweets)
-
-
-            else:
-                startDate = untilDate
-                untilDate+= dt.timedelta(days=4)
-                break
-
-            lastHeight = newHeight
-            count = count +1
-            if count == 50:
-                break
-    driver.close()
-    
-if __name__ == '__main__':
-    startDate = dt.date(year = 2021, month=1,day = 1)
-    untilDate = dt.date(year = 2021, month=1,day = 2)
-    endDate = dt.date(year = 2021, month=1,day = 10)
-    for i in range(0,4):
-        startDate += dt.timedelta(days=i)
-        untilDate += dt.timedelta(days=i)
-        my_thread = threading.Thread(target=crawling,args=(startDate,untilDate,endDate))
-        my_thread.start()
-#%%
-len(totaltweets)
-
-#%%
-class crawling(threading.Thread):
-    startDate =dt.date(year = 1, month=1,day = 1)
-    untilDate =dt.date(year = 1, month=1,day = 1)
-    endDate = dt.date(year = 1, month=1,day = 1)
-    driver = webdriver.Chrome()
-    count = 0
-    
-
-    def __init__(self,startDate,untilDate,endDate):
-        threading.Thread.__init__(self) 
-        self.startDate = startDate
-        self.untilDate = untilDate
-        self.endDate = endDate
-
-    
-    def run(self) :
-        print(self.startDate,self.untilDate,self.endDate)
-                
-        # 크롤링할 단어
-        query = '코로나'
-        totaltweets = []
-        while not endDate == startDate and count < 1000:
-            # 인기글
-            # url='https://twitter.com/search?q='+query+'%20since%3A'+str(startDate)+'%20until%3A'+str(untilDate)+'&amp;amp;amp;amp;amp;amp;lang=eg'
-            # 최신글
-            url = 'https://twitter.com/search?q='+query+'%20since%3A'+str(startDate)+'%20until%3A'+str(untilDate)+'&f=live'
-            driver.get(url)
+    count = 0 
+    time.sleep(1)
+    while True:
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(1)
+        newHeight = driver.execute_script("return document.body.scrollHeight")
+        tweets = str(soup.find_all("div", {"class": "css-901oao r-1fmj7o5 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"}))
+        # 테그 제거
+        tweets = re.sub('<[^>]*>', '', tweets, 0).strip()
+        # \n|\r 제거
+        tweets = re.sub('[\n|\r]', '', tweets, 0).strip()
+        if newHeight != lastHeight:
             html = driver.page_source
-            soup = BeautifulSoup(html,'html.parser')
+            soup = BeautifulSoup(html,'html.parser') 
+            totaltweets.append(tweets)
+        else:
+            break
+        lastHeight = newHeight
+        count += 1
+        if count  >= 100:
+            break
+    driver.close()
+    return totaltweets
 
-            lastHeight = driver.execute_script("return document.body.scrollHeight")
+# 스레드를 이용한 셀레니움 크롤링
+def crawlStart (query,threads,_year,_month,_day):
+    startDate = dt.date(year = _year, month=_month,day = 1)
+    untilDate = dt.date(year = _year, month=_month,day = 2)
+    endDate = dt.date(year = _year, month=_month,day = _day)
 
-            # time.sleep(2)
-            while True:
-                tweets = str(soup.find_all("div", {"class": "css-901oao r-1fmj7o5 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"}))
-                tweets = re.sub('<.+?>', '', tweets, 0).strip()
-                tweets = re.sub('\n', '', tweets, 0).strip()
+    totaltweets = []   
+    repetitions = (endDate-startDate).days//threads
+    for i in range(repetitions+1):
+        for j in range(i*threads,i*threads+threads):
+            startD = startDate+ dt.timedelta(days=j)
+            untilD = untilDate+ dt.timedelta(days=j)
+            my_thread = threading.Thread(target=crawling,args=(query,startD,untilD,endDate,totaltweets,threads))
+            my_thread.start()
+        my_thread.join()
+    return totaltweets
 
-                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+# 혹시 모르니 정제 이전의 데이터도 저 장
+def saveRaw(tweets_data,_year,_month):
+    crawled_data = pd.DataFrame(tweets_data, columns=['message']).drop_duplicates(['message'],keep='last')
+    crawled_data = crawled_data.reset_index().rename(columns={"index" : 'number'})
+    crawled_data.number = crawled_data.number.apply(lambda x : x+1)
+    # crawled_data.to_csv('../Data/scrapedData/'+str(_year)+'_'+str(_month)+'_covid_twitter.csv',index=False)
+    crawled_data.to_csv('../Data/scrapedData/'+str(_year)+'_'+str(_month)+'_hos_twitter.csv',index=False)
 
-                time.sleep(1)
+# 스크랩핑한 데이터의 단어들 정제 후 저장
+def crawlClean(tweets_data,_year,_month):
+    crawled_data = pd.DataFrame(tweets_data, columns=['message']).drop_duplicates(['message'],keep='last')
+    crawled_data = cleanStr(crawled_data)
+    # 인덱스 부여하기 (그런데 필요없을듯..)
+    crawled_data = crawled_data.reset_index().rename(columns={"index" : 'number'})
+    crawled_data.number = crawled_data.number.apply(lambda x : x+1)
+    # crawled_data.to_csv('../Data/scrapedData/'+str(_year)+'_'+str(_month)+'_covid_twitter_removed.csv',index=False)
+    crawled_data.to_csv('../Data/scrapedData/'+str(_year)+'_'+str(_month)+'_hos_twitter_removed.csv',index=False)
 
-                newHeight = driver.execute_script("return document.body.scrollHeight")
-
-                if newHeight != lastHeight:
-                    html = driver.page_source
-                    soup = BeautifulSoup(html,'html.parser')
-                    tweets = str(soup.find_all("div", {"class": "css-901oao r-1fmj7o5 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"}))
-                    tweets = re.sub('<.+?>', '', tweets, 0).strip()
-                    tweets = re.sub('\n', '', tweets, 0).strip()
-                    # wordfreq =len(tweets)
-                    totaltweets.append(tweets)
-
-
-                else:
-                    startDate = untilDate
-                    untilDate+= dt.timedelta(days=4)
-                    break
-
-                lastHeight = newHeight
-                count = count +1
-                if count == 1000:
-                    break
-
+# 스크랩핑한 데이터의 단어들 정제
+def cleanStr (crawled_df):    
+    # URL 삭제
+    crawled_df['message'] = crawled_df['message'].str.replace(r'[(bit|youtube|m|coupa|bitsonic|n|naver|news|yna)].(?:[-\w.\0-9\.]|(?:\da-fA-F{2}))+',repl = r'', regex=True)  
+    crawled_df['message'] = crawled_df['message'].str.replace(r'[(http|https|ftp)]://(?:[-\w.\0-9\.]|(?:\da-fA-F{2}))+',repl = r'', regex=True)  
+    # 이메일 삭제
+    crawled_df['message'] = crawled_df['message'].str.replace(r'\[a-zA-Z0-9\_.+-\]+@\[a-zA-Z0-9-\]+.\[a-zA-Z0-9-.\]+',repl = r'', regex=True)  
+    # 한글 자음모음 삭제
+    crawled_df['message'] = crawled_df['message'].str.replace(r'[ㄱ-ㅎㅏ-ㅣ]+',repl = r'', regex=True)  
+    # 특수문자 및 2중 스페이스 삭제 
+    crawled_df["message"] = crawled_df["message"].str.replace(pat=r'[^\w\s+]', repl=r'', regex=True)
+    # crawled_df["message"] = crawled_df["message"].str.replace(pat=r'[^\w\s]', repl=r'', regex=True)    
+    # 빈값 삭제
+    crawled_df['message'].replace('',np.NaN,inplace=True)
+    crawled_df.dropna(subset=['message'],inplace=True)
+    return crawled_df
 
 if __name__ == '__main__':
-    startDate = dt.date(year = 2021, month=1,day = 1)
-    untilDate = dt.date(year = 2021, month=1,day = 2)
-    endDate = dt.date(year = 2021, month=1,day = 10)
-    for i in range(0,4):
-        startDate += dt.timedelta(days=i)
-        untilDate += dt.timedelta(days=i)
-        my_thread = crawling(startDate,untilDate,endDate)
-        my_thread.start()
+    months = [1,2,3,4,5,6]
+    days  = [31,28,31,30,31,30]
+    for i in range(6):
+        query,threads,_year,_month,_day = '병원',5,2021,6,30
+        tweets_data = crawlStart(query,threads,_year,months[i],days[i])
+        saveRaw(tweets_data,_year,months[i])
+        crawlClean(tweets_data,_year,months[i])
+    # query,threads,_year,_month,_day = '병원',5,2021,6,30
+    # tweets_data = crawlStart(query,threads,_year,_month,_day)
+    # saveRaw(tweets_data,_year,_month)
+    # crawlClean(tweets_data,_year,_month)
+#%%
+tweets_data
+#%%
+# 중복제거 및 빈값삭제 후 csv 저장
+import numpy as np
+crawled_data = pd.DataFrame(list(set(totaltweets)), columns=['message'])
+crawled_data['message'].replace('[]',np.NaN,inplace=True)
+crawled_data.dropna(subset=['message'],inplace=True)
+crawled_data = crawled_data.reset_index().rename(columns={"index" : 'number'})
+crawled_data.number = crawled_data.number.apply(lambda x : x+1)
+crawled_data.to_csv('./2101_covid_twitter.csv',index=False)
+
+#%%
+
+#특수문자 삭제
+# 중복 제거 후 message의 마지막 것만 살리겠다는 의미
+crawled_data = pd.DataFrame(totaltweets, columns=['message']).drop_duplicates(['message'],keep='last')
+# cleansing string
+def cleanStr (crawled_df):    
+    # URL 삭제
+    crawled_df['message'] = crawled_df['message'].str.replace(r'[(http|https|ftp)]://(?:[-\w.\0-9\.]|(?:\da-fA-F{2}))+',repl = r'', regex=True)  
+    # 이메일 삭제
+    crawled_df['message'] = crawled_df['message'].str.replace(r'\[a-zA-Z0-9\_.+-\]+@\[a-zA-Z0-9-\]+.\[a-zA-Z0-9-.\]+',repl = r'', regex=True)  
+    # 한글 자음모음 삭제
+    crawled_df['message'] = crawled_df['message'].str.replace(r'[ㄱ-ㅎㅏ-ㅣ]+',repl = r'', regex=True)  
+    # 특수문자 및 2중 스페이스 삭제 
+    crawled_df["message"] = crawled_df["message"].str.replace(pat=r'[^\w\s]', repl=r'', regex=True)
+    # crawled_df["message"] = crawled_df["message"].str.replace(pat=r'[^\w\s]', repl=r'', regex=True)    
+    # 빈값 삭제
+    crawled_df['message'].replace('',np.NaN,inplace=True)
+    crawled_df.dropna(subset=['message'],inplace=True)
+    return crawled_df
+crawled_data = cleanStr(crawled_data)  
+
+# 인덱스 부여하기 (그런데 필요없을듯..)
+crawled_data = crawled_data.reset_index().rename(columns={"index" : 'number'})
+crawled_data.number = crawled_data.number.apply(lambda x : x+1)
+crawled_data.to_csv('./2101_covid_twitter_removed.csv',index=False)
+#%%
+## 형태소 분석
+from konlpy.tag import Kkma, Okt
+from konlpy.utils import pprint
+from collections import Counter
+okt = Okt()
+result = []
+for i in crawled_data['message']:
+    # 어절 추출
+    result = result +okt.nouns(i)
+## 빈도수 분석
+count = Counter(result)
+count = count.most_common(500)
+pd.DataFrame(count,index=[0]).to_csv('./2101_covid_twitter_count.csv.csv',index=[0])
+#%%
+# okt.nouns(crawled_data['message'][0])
+result
