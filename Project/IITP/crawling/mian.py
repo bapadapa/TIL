@@ -301,7 +301,7 @@ def saveRaw(tweets_data,_year,_month):
 def crawlClean(tweets_data,_year,_month):
     crawled_data = pd.DataFrame(tweets_data, columns=['message']).drop_duplicates(['message'],keep='last')
     crawled_data = cleanStr(crawled_data)
-    # 인덱스 부여하기 (그런데 필요없을듯..)
+    # 인덱스 부여하기 (그런데 필요없을듯.. )
     crawled_data = crawled_data.reset_index().rename(columns={"index" : 'number'})
     crawled_data.number = crawled_data.number.apply(lambda x : x+1)
     # crawled_data.to_csv('../Data/scrapedData/'+str(_year)+'_'+str(_month)+'_covid_twitter_removed.csv',index=False)
@@ -377,7 +377,7 @@ def cleanStrVer2 (crawled_df):
     return crawled_df
 crawled_data = cleanStr(crawled_data)  
 
-# 인덱스 부여하기 (그런데 필요없을듯..)
+# 인덱스 부여하기 (그런데 필요없을듯.. )
 crawled_data = crawled_data.reset_index().rename(columns={"index" : 'number'})
 crawled_data.number = crawled_data.number.apply(lambda x : x+1)
 crawled_data.to_csv('./2101_covid_twitter_removed.csv',index=False)
