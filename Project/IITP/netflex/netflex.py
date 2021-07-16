@@ -23,6 +23,7 @@ def film_tfdif(metadatas,filmName,extract_genre =extract_genre):
     films = films[['title','overview']]
     films['overview']=films['overview'].fillna('') # na값 제거
     tfidf=TfidfVectorizer(stop_words='english')#불용어 제거 
+    # print('tfidf\n\n',tfidf.fit_transform(films['overview']).toarray() )
     return films,tfidf.fit_transform(films['overview']).toarray() 
 
 # TF-IDF를 사용하여 추출한 단어를 기반으로 COS 유사도 측정
@@ -36,12 +37,14 @@ def top_match(data, name, rank,c_sim=cos_sim):
             similarity.append((c_sim(data[i],data[name]),i))
     similarity.sort()
     similarity.reverse()
+    # print('similarity\n\n',similarity)
     return similarity[:rank]
 
 def extrasct_similar_Movie(data,tfidf_mat,title,rank = 10,match = top_match):
     movieList = [] 
     for similarity, movie_id in match(tfidf_mat,data[data.title == title].index[0],rank):
         movieList.append((title, data.loc[movie_id,'title'],similarity))
+    print('movieList\n\n',movieList)
     return movieList
 
 def networkPlot(movieList,film_title,rank):
@@ -86,3 +89,10 @@ def start(M_df,film_title,rank):
 if __name__ =="__main__":
     M_df = pd.read_csv('./NetflexData/raw/movies_metadata.csv')
     start(M_df,'Lucifer',20)
+
+
+
+#%%
+M_df[['title','overview']]
+
+
