@@ -33,7 +33,9 @@ for target in user:
         sleep(2) 
         driver.find_element(By.ID,'t-rit-all').click()
         sleep(2)       
+        # 대상디렉토리의 모든 파일명 확인 후 가장 최근파일 조회
         fileName = max([filePath+ r'/'+ i for i in os.listdir(filePath)],key=os.path.getctime)
+        # 파일명 변경
         if fileName == filePath+'/SraRunTable.txt':
             os.rename(os.path.join(filePath,fileName),os.path.join(filePath,target+'.txt'))
     except:
