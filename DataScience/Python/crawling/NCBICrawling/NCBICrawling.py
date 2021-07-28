@@ -22,7 +22,7 @@ chrome_option = Options()
 chrome_option.add_experimental_option('prefs',prefs)
 # 웹드라이버 생성
 driver = webdriver.Chrome(options=chrome_option)
-driver.implicitly_wait(10)
+driver.implicitly_wait(10) 
 
 for target in user:  
     driver.get(webPath+target)
