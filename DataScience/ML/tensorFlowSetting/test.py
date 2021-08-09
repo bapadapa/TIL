@@ -16,3 +16,9 @@ if gpus:
     matmul_sum = tf.add_n(c)
 
   print(matmul_sum)
+
+
+#%%
+from tensorflow.python.client import device_lib 
+
+device_lib.list_local_devices()
