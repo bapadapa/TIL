@@ -139,7 +139,8 @@ model.fit(X, y)
 print('r2',model.score(X, y))
 print('rmse',rmse(model.predict(X),y))
 
-
+#%%
+X.shape
 #%%
 w = np.random.randn(X.shape[1],1)
 b = np.random.randn(1)
