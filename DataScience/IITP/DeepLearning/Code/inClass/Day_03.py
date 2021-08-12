@@ -291,7 +291,7 @@ with tf.Session() as sess:
         
 
 #%%
-
+x_data.shape[1]
 #%%
 # Layer 쌓기
 x_data = np.array([[0, 0], [0, 1], [1, 0], [1, 1]], dtype=np.float32)
@@ -311,13 +311,14 @@ b2 = tf.Variable(tf.random_normal([1]))
 hx = tf.sigmoid(tf.matmul(layer1,w2)+b2)
 
 cost = -tf.reduce_mean(y *  tf.log(hx) + (1 - y ) * tf.log(1-hx))
-train = tf.train.GradientDescentOptimizer(learning_rate = 1e-3).minimize(cost)
+train = tf.train.GradientDescentOptimizer(learning_rate = 1e-1).minimize(cost)
 
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
-    for _ in np.arange(100):
+    for epoch in np.arange(10000):
         sess.run(train,feed_dict={x:x_data ,y:y_data})
         predict = sess.run(hx,feed_dict={x : x_data})
         result = np.where(predict >= 0.5,1,0)
-        acc = sum(result == y_data)/x_data.shape[0]        
-        print(f'acc ==> {acc}')
+        if epoch %100 == 0 :            
+            acc = sum(result == y_data)/x_data.shape[0]        
+            print(f'epoch ==> {epoch} , acc ==> {acc}')
