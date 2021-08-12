@@ -30,6 +30,7 @@
 - [ML](./DataScience/ML)🔥
 - [Python](./DataScience/Python)🔥
 - [R](./DataScience/R)🔥
+- [DeepLearning](./DataScience/DeepLearning)🔥
 
 # [3.Backend](./Backend)
 
