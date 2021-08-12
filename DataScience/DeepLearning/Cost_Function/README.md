@@ -1,6 +1,6 @@
-# 손실함수 (Cont / Loss Function)
+# 비용/손실함수 (Cont / Loss Function)
 
-## [수식이 안보이면 다운로드](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima/related)
+## [수식이 안보이면 클릭 후 설치](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima/related)
 
 ## cross entropy
 

@@ -1,5 +1,7 @@
 # 선형회기 ( Linear_Regression )
 
+## [수식이 안보이면 클릭 후 설치](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima/related)
+
 ## 간단 설명
 
 - 가설함수를 생성하고, 실제 데이터에 맞는 Weight 과 Bias를 찾는것이 목적
