@@ -1,10 +1,10 @@
 # 손실함수 (Cont / Loss Function)
 
+## [수식이 안보이면 다운로드](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima/related)
+
 ## cross entropy
 
 ### 수식
-
-<script id="MathJax-script" async src="<url-to-your-site>/mathjax/tex-chtml.js"></script>
 
 $$-\frac{1}{n} \sum_{i=1}^{n} \sum_{c=1}^{C} L_{ic}log(P_{ic})$$
 
