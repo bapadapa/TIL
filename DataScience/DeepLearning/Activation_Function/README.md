@@ -27,12 +27,14 @@
 1. TanH
 1. ArcTan
 1. Softsign
+   <a href="https://imgbb.com/"><img src="https://i.ibb.co/VCQX7PZ/Activation-sigmoid.png" alt="Activation-sigmoid" border="0"></a>
 
 ## Relu
 
 1. ReLU
 1. Leaky ReLU
 1. ELU
+   <a href="https://imgbb.com/"><img src="https://i.ibb.co/GMrRmqK/Activation-relu.png" alt="Activation-relu" border="0"></a>
 
 ## Other
 
