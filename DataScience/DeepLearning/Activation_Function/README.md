@@ -19,7 +19,7 @@
 
 4.  sign function
 
-![sigmoid](../img/Activation_step.png)
+<a href="sigmoid"><img src="https://i.ibb.co/gTfPdT7/Activation-step.png" alt="Activation-step" border="0"></a>
 
 ## Sigmoid
 
