@@ -195,6 +195,6 @@ print(b.shape)
 print(hx.shape)
 #%%
 for _ in epochs:
-    w = w + ir*np.dot(x.T,)
+    w = w + lr*np.dot(x.T,)
 
 

@@ -1,19 +1,11 @@
-# 선형회기
+# 수업 내용
 
-- 가설함수를 생성하고, 실제 데이터에 맞는 Weight 과 Bias를 찾는것이 목적
+# 회기
 
-- 순서
-  1. `X`를 선언한다.
-     - 가상의 X를 선언한다.
-  1. `Y`를 선언한다.
-     - 가상의 Y를 선언한다.
-  1. `Weight를` 선언한다.
-     - 실질적으로 구하고자 하는 것이다.
-     - 의미하는 것은 `가중치`이다.
-  1. `Bias`를 선언한다.
-     - 실질적으로 구하고자 하는 것이다.
-     - 편향을 의미한다.
-       -
-  1. `Hyperparameter`를 선언한다.
-  1. `Cost`를 선언한다.
-  1. `Optimizer`를 선언한다.
+1. [선형회기](../../../../DeepLearning/Regression/Linear_Regression)
+1. [로제스틱회기](../../../../DeepLearning/Regression/Logistic_Regression)
+
+# 함수
+
+1. [활성함수](../../../../DeepLearning/Function/Activation_Function)
+1. [손실/비용 함수](../../../../DeepLearning/Function/Cost_Function)

@@ -1,4 +1,42 @@
-#%%
+(X_train, Y_train), (X_test,Y_test) = cifar10.load_data()
+
+X_train = X_train.reshape(X_train.shape[0],-1).astype(np.float32)/255
+X_test = X_test.reshape(X_test.shape[0],-1).astype(np.float32)/255
+
+Y_train = np_utils.to_categorical(Y_train)
+Y_test = np_utils.to_categorical(Y_test)
+
+x_train, x_val,y_train, y_val = train_test_split(X_train,Y_train,test_size=.2)
+
+# 모델 생성하기
+
+model = Sequential([
+    
+    Dense(1024,input_dim = x_train.shape[1],
+        activation='elu',kernel_initializer='he_uniform'),
+    Dropout(.5),
+    Dense(512,activation='selu'),
+    Dropout(.3),
+    Dense(256,activation='relu'),
+    Dropout(.2),
+    Dense(64,activation='LeakyReLU'),
+    Dense(y_train.shape[1],activation='softmax')
+]) 
+
+print(model.summary())
+
+model.compile(
+    optimizer='adam',
+    loss= 'categorical_crossentropy',
+    metrics=['accuracy']
+    )
+hist = model.fit(
+    x= x_train,
+    y= y_train,
+    epochs= 100 , 
+    batch_size = 64,
+    validation_data = (x_val,y_val)
+    )#%%
 
 from math import e
 import matplotlib
@@ -337,4 +375,4 @@ print(f'테스트 정확도 {accuracy_score(result,y_hat)}')
 
 
 #%%
-tf.nn
+print(f'테스트 정확도 {accuracy_score(result,y_hat)}')
