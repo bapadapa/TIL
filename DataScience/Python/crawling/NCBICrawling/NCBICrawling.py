@@ -86,7 +86,7 @@ for target in config['MGnify_ID']:
                         break
             print(f"{target} 다운로드 완료")
 
-        except:
+        except :
             print(f'{target_name} 파일없는 것 같습니다.')
             result = result.append({'MGnify_ID':target,'S_ID':target_name,'Download':'N'}, ignore_index=True)
             pass
