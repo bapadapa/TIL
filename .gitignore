@@ -7,8 +7,7 @@
 *.txt
 *.zip
 *.gz
-DataScience/IITP/DeepLearning/data/cifar_10/data_batch_1
-DataScience/IITP/DeepLearning/data/cifar_10/data_batch_2
-DataScience/IITP/DeepLearning/data/cifar_10/data_batch_3
-DataScience/IITP/DeepLearning/data/cifar_10/data_batch_4
-DataScience/IITP/DeepLearning/data/cifar_10/data_batch_5
+## cifar-10 데이터
+cifar_10/
+## 두피 데이터
+HeadSample/
