@@ -10,8 +10,7 @@ x_train, x_val,y_train, y_val = train_test_split(X_train,Y_train,test_size=.2)
 
 # 모델 생성하기
 
-model = Sequential([
-    
+model = Sequential([    
     Dense(1024,input_dim = x_train.shape[1],
         activation='elu',kernel_initializer='he_uniform'),
     Dropout(.5),
@@ -36,7 +35,8 @@ hist = model.fit(
     epochs= 100 , 
     batch_size = 64,
     validation_data = (x_val,y_val)
-    )#%%
+    )
+#%%
 
 from math import e
 import matplotlib
