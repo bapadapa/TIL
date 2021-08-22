@@ -38,7 +38,7 @@ class_names = [
     ]
 
 
-#%%
+    #%%
 model = Sequential([
     Conv2D(
         32,

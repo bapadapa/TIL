@@ -1,3 +1,6 @@
+"""
+RESNET을 구동시켜 보고 싶었지만, 하드웨어 기능이 부족하여 실행은 못함
+"""
 #%%
 import numpy as np
 import pandas as pd
@@ -145,7 +148,8 @@ pool_2 = MaxPooling2D(pool_size=(10,10))(nomal_2)
 
 cv_4 = Conv2D(64,kernel_size=(3,3),padding='same',kernel_initializer='he_normal',activation='elu')(pool_2)
 cv_5 = Conv2D(64,kernel_size=(3,3),padding='same',kernel_initializer='he_normal',activation='elu')(cv_4)
-con_2 = Concatenate()([con_1,cv_5])
+con_2 = Concatenate()([pool_2,cv_5])
+
 nomal_3 = BatchNormalization()(con_2)
 pool_3 = MaxPooling2D(pool_size=(10,10))(nomal_3)
 
@@ -216,16 +220,16 @@ flat_1 = Flatten()(Pool)
 h1 = Dense(256,activation= 'relu')(flat_1)
 
 output = Dense(y_train.shape[1],activation='softmax')(h1)
-
+model = Model(inputs = [input_],outputs = [output])
+model.summary()
 
 with tf.device('/device:GPU:0'):
 
-    model = Model(inputs = [input_],outputs = [output])
-    model.summary()
+
 
     model.compile(
         loss = 'categorical_crossentropy',    
-        optimizer = 'adam',
+        optimizer = keras.optimizers.adam(learning_rate = 1e-6),
         metrics=['accuracy']
     )
 
