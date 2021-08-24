@@ -1,2 +1,1 @@
-- [r기초](./basic)
-- [시각화](./visualization)
+## 아직 정리 안함
