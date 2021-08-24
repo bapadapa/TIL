@@ -35,7 +35,10 @@
 
 ## 결과
 
-1. <img src="NetflexData/output/Iron Man_20.png" alt="Iron Man Top20" border="0">
-1. <img src="NetflexData/output/Lucifer_20.png" alt="Iron Man Top20" border="0">
+1. Visualization
+
+   1. ![Iron \Man Top20](NetflexData/output/IronMan_20.png)
+
+   1. ![Lucifer Top20](NetflexData/output/Lucifer_20.png)
 
    - 선이 굵을수록 유사한 내용을 가진 영화다.

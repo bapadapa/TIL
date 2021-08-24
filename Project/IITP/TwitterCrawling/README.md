@@ -8,10 +8,9 @@
 
 ## 결과
 
-<img src="Data\img\output\hos_wordCloud.png" alt="Iron Man Top20" border="0">
+![hos_wordCloud](Data\img\output\hos_wordCloud.png)
 
-- 유의미한 결과는 딱히 없다.
-- 단순히 빈도수 분석을 했다.
+- SNS(Twitter)를 크롤링하여 현재 병원에 관련된 글의 키워드를 추출 후 빈도수 분석을 통하여 가장 연관된 키워드를 추출하였다.
 
 ## 코드
 
