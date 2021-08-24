@@ -72,3 +72,21 @@
         \end{bmatrix}
         $
    - ![벡터 곱](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Scalar_multiplication_of_vectors2.svg/250px-Scalar_multiplication_of_vectors2.svg.png)
+
+## Unit vector / 단위벡터
+
+1. x 축
+   1. 수식
+      - $\hat{i}$
+   1. 명칭
+      1. i-hat (아이 헷)
+      1. x축의 unit vector
+1. x축
+   1. 수식
+      - $\hat{j}$
+   1. 명칭
+      1. j-hat (아이 헷)
+      1. y축의 unit vector
+
+- 위 2개 모두 Basis(기저)라고 부른다
+  - 실질적으로 Scaling 하는 대상
