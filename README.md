@@ -25,7 +25,7 @@
 - 리눅스🧠
 - 컴퓨터 구조🧠
 
-#### [2.DataSicence](./DataScience)📚
+### [2.DataSicence](./DataScience)📚
 
 - [ML](./DataScience/ML)🔥
 - [Python](./DataScience/Python)🔥
@@ -33,23 +33,23 @@
 - [DeepLearning](./DataScience/DeepLearning)🔥
 - [Math](./DataScience/Math)🔥
 
-#### [3.Backend](./Backend)🧠
+### [3.Backend](./Backend)🧠
 
 - [Django](./Backend/Django)🧠
 
-#### [4.Frontend](./Frontend)🧠
+### [4.Frontend](./Frontend)🧠
 
 - [React](./Frontend/React)🧠
 
-#### [5.Database](./Database)🧠
+### [5.Database](./Database)🧠
 
 - [Oracle](./Database/Oracle)🧠
 
-#### [6.나머지](./Others)
+### [6.나머지](./Others)
 
 - [GitHub](./Others/Git)📚
 - [MarkDown](./Others/MarkDown)📚
-- [프로젝트들](#프로젝트들)🔥📚
+- [프로젝트들](./Project)🔥📚
 
 ---
 
@@ -74,8 +74,6 @@
 
 ---
 
-## [프로젝트들](/Project)
-
 ## 자격증들
 
 - 취득 : 🎉
@@ -83,6 +81,7 @@
   - OCJP
   - DSAC
   - ICDL
+  - 정보처리기사(필기/ 실기 준비중)
 
 - 공부중 :📖
   - 정보처리기사 (실기)
