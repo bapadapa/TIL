@@ -63,7 +63,7 @@ for target in config['MGnify_ID']:
                 elif EC.presence_of_element_located((By.CLASS_NAME, "ui warning icon message")):                    
                     check = False
                     break
-            # Warning페이지 접속시 종료
+            # Warning페이지 접속시 종료  
             if not check :
                 print(f"{target} 파일이 없습니다.")
                 result = result.append({'MGnify_ID':target,'S_ID':target_name,'Download':'N'}, ignore_index=True)
