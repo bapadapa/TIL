@@ -16,8 +16,6 @@
      3 \\
      \end{bmatrix}
      $
-1. ## 수학자
-   -
 
 ## 선형대수에서의 벡터
 
@@ -32,7 +30,9 @@
    - `모든 벡터`는 `대응`되는 `숫자 쌍(좌표,값)`이 있다.
 
 1. 벡터의 션산
+
    1. 합
+
       - 벡터의 `이동량`이라고 생각하면 된다.
         - $
           \begin{bmatrix}
@@ -55,7 +55,9 @@
           - 좌표값 -> $\begin{bmatrix}
             X \\ Y \\
             \end{bmatrix}$
-        - ![벡터 합](https://mathinsight.org/media/image/image/vector_parallelogram_law.png)
+        - [![벡터 합](https://www.3blue1brown.com/content/lessons/2016/vectors/vector_addition.svg)](https://3b1b-posts.us-east-1.linodeobjects.com//content/lessons/2016/vectors/vector_addition.mp4#t=0.001)
+        - [이미지 출처](https://www.3blue1brown.com/lessons/span)
+
    1. 곱
       - 곱한것 만큼 길이가 변한다
         - 위와같이 길이가 변하는 것을 `Scaling` 이라고 부른다.
@@ -64,14 +66,11 @@
         - `Scaling`시 곱하는 값을 `Scalar`라고 부른다.
       - 벡터를 `Scalar`로 `Scaling` 한다는 것은 벡터의 곱과 같은 의미이다.
       - 간단 예시
-        - $
-        3 * \begin{bmatrix}
-        x \\ y \\
-        \end{bmatrix} = \begin{bmatrix}
-        3x \\ 3y \\
-        \end{bmatrix}
-        $
-   - ![벡터 곱](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Scalar_multiplication_of_vectors2.svg/250px-Scalar_multiplication_of_vectors2.svg.png)
+        - $ 3\vec{c} = 3 ⋅ \begin{bmatrix} x \\ y \\ \end{bmatrix} = \begin{bmatrix}3x \\ 3y \\ \end{bmatrix}
+          $
+
+   - [![벡터 곱(scaling)](https://www.3blue1brown.com/content/lessons/2016/vectors/multiply_2.svg)](https://3b1b-posts.us-east-1.linodeobjects.com//content/lessons/2016/vectors/multiply_2.mp4#t=0.001)
+     - [이미지 출처](https://www.3blue1brown.com/lessons/span)
 
 ## Unit vector / 단위벡터
 
@@ -90,3 +89,53 @@
 
 - 위 2개 모두 Basis(기저)라고 부른다
   - 실질적으로 Scaling 하는 대상
+
+## Linear Combinations ( 선형 조합)
+
+1. 두 벡터의 `방향성이 다르다`.
+
+   - 스칼라의 값을 자유롭게 변환시킨다면, 대부분의 벡터 쌍(의 경우 평면의 모든 점에 도달할 수 있다.
+     - [![방향이 다른 선형 조합](https://www.3blue1brown.com/content/lessons/2016/span/linear_combination_def.svg)](https://3b1b-posts.us-east-1.linodeobjects.com//content/lessons/2016/span/linear_combination_def.mp4#t=0.001)
+       - [이미지 출처](https://www.3blue1brown.com/lessons/span)
+     - 2D상에서 Span에 제한이없다.
+
+1. 두 벡터의 `방향성이 같다`
+
+   - 직선으로 제한이 된다.
+     - [![방향이 같은 선형 조합](https://www.3blue1brown.com/content/lessons/2016/span/parallel_combination.svg)](https://3b1b-posts.us-east-1.linodeobjects.com//content/lessons/2016/span/parallel_combination.mp4#t=0.001)
+       - [이미지 출처](https://www.3blue1brown.com/lessons/span)
+     - 2D상에서 Span이 직선으로 제한된다.
+
+1. 두 벡터가 Zero Vectir(영벡터)라면 원점에 갇힌다.
+1. Span
+   - Span은 1,2번과 같이 벡터쌍의 조합으로 나타낼 수 있는 벡터 집합
+   - [![1,2번 둘을 비요해주는 영상](https://www.3blue1brown.com/content/lessons/2016/span/span_def.svg)](https://3b1b-posts.us-east-1.linodeobjects.com//content/lessons/2016/span/span_def.mp4#t=0.001)
+     - [이미지 출처](https://www.3blue1brown.com/lessons/span)
+
+## Vector & Point
+
+- 간단하게 생각하면 Vector가 가르키는 `위치값(꼬리 위치)`가 Point라고 생각하면 편하다
+  - 그것의 조합을 `Matrix(행열)`로 나타내 사용한다(컴퓨터 관점)
+  - [![Vector & Point](https://3b1b-posts.us-east-1.linodeobjects.com//content/lessons/2016/span/point_space.png)](https://3b1b-posts.us-east-1.linodeobjects.com//content/lessons/2016/span/point_space.mp4#t=0.001)
+    - [이미지 출처](https://www.3blue1brown.com/lessons/span)
+
+## Linear dependent & Independent
+
+- span의 확장(차원추가 가능 여부)에 따라 dependent와 Independent로 나뉜다.
+  - ![](https://i.stack.imgur.com/NKvYQ.gif)
+  - ![](https://i.stack.imgur.com/SlvU1.gif)
+  - ![](https://i.stack.imgur.com/SlvU1.gif)
+    - [이미지 출처](https://newbedev.com/how-can-i-visualize-independent-and-dependent-set-of-vectors)
+
+### Linear dependent / 선형 종속
+
+- 불필요한 벡터가 있어 Vector를 추가(차원증가)시켜도 Span이 학장되지 않는 것
+- $\vec{u} = a\vec{v} + b\vec{w} \quad for\ some\ a\ and\ b$
+
+- Vector중 하나가 다른 벡터들의 선형 조합으로 표현 가능한 경우
+  - [![선형 종속](https://www.3blue1brown.com/content/lessons/2016/span/linearly_dependent.svg)](https://3b1b-posts.us-east-1.linodeobjects.com//content/lessons/2016/span/linearly_dependent.mp4#t=0.001)
+
+### Linear Independent / 선형 독립
+
+- 각 Vector가 기존 Span에 또 다른 차원을 추가하는게 가능한 것
+- $\vec{u} \ne a\vec{v} + b\vec{w} \quad for\ some\ a\ and\ b$
