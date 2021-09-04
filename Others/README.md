@@ -1,3 +1,6 @@
 - [GIT 사용법 및 에러](./Git)
 - [마크다운 설명서](./MarkDown)
 - [정보처리기사](./정보처리기사)
+- 이미지
+  - [gif만들기](https://ezgif.com/video-to-gif/ezgif-3-da81712681d5.mp4)
+  - [img 무료 호스팅](https://ko.imgbb.com/)
