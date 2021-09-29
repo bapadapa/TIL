@@ -3,7 +3,7 @@
 ## 개인 공부
 
 - [ML](./ML)
-- [DeepLearning](/DeepLearning)
+- [DeepLearning](./DeepLearning)
 - [Python](./Python)
 - [R](./R)
 - [Math](./Math)

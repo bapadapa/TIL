@@ -4,4 +4,6 @@
 
 1. [선형회기](./Linear_Regression)
 1. [함수들](./Function)
+
 1. [감정(문맥) 분석](./SentimentAnalysis)
+1. [문자요약](./textSummary)
