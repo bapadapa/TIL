@@ -7,6 +7,8 @@
 *.txt
 *.zip
 *.gz
+*.tgz
+*.png
 ## cifar-10 데이터
 cifar_10/
 ## 두피 데이터
