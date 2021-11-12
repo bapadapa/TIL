@@ -1,6 +1,6 @@
 # 핸즈온 머신러닝을 읽으면서 ML공부
 
-## [Hands On ML 역자의 블로그 Clone](./workspace/handson-ml2)
+## [Hands On ML 역자의 블로그](./workspace/handson-ml2)
 
 ## [Chap01](./chap_01)
 
