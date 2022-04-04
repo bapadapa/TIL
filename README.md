@@ -16,7 +16,7 @@
 
 ## 목차
 
-### 1.CS
+### CS
 
 - [Algorithm](./Algorithm)📚
   - [백준](./Algorithm/BaekJoon)
@@ -25,7 +25,9 @@
 - 리눅스🧠
 - 컴퓨터 구조🧠
 
-### [2.DataSicence](./DataScience)📚
+### [Language](./Language)📚
+
+### [DataSicence](./DataScience)📚
 
 - [ML](./DataScience/ML)🔥
 - [Python](./DataScience/Python)🔥
@@ -33,17 +35,21 @@
 - [DeepLearning](./DataScience/DeepLearning)🔥
 - [Math](./DataScience/Math)🔥
 
-### [3.Backend](./Backend)🧠
+### [Backend](./Backend)🧠
 
 - [Django](./Backend/Django)🧠
 
-### [4.Frontend](./Frontend)🧠
+### [Frontend](./Frontend)🧠
 
 - [React](./Frontend/React)🧠
 
-### [5.Database](./Database)🧠
+### [Database](./Database)🧠
 
 - [Oracle](./Database/Oracle)🧠
+
+### [Hadoop](./Hadoop)
+
+### [ELK](./ELK)
 
 ### [6.나머지](./Others)
 
@@ -81,17 +87,4 @@
   - OCJP
   - DSAC
   - ICDL
-  - 정보처리기사(필기/ 실기 준비중)
-
-- 공부중 :📖
-  - 정보처리기사 (실기)
-    - 신청기간 : 9월 13일
-    - 시험일자 : 10월 16일
-  - 빅데이터분석기사 (필기)
-    - 신청기간 : 9.6 ~ 9.10
-    - 수험표발급 : 9.24
-    - 시험일자 : 10.2(토)
-  - 빅데이터분석기사 (실기)
-    - 신청기간 : 11.8 ~ 11.12
-    - 수험표발급 : 11.19
-    - 시험일자 : 12.4(토)
+  - 정보처리기사

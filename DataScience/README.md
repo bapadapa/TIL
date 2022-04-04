@@ -4,7 +4,7 @@
 
 - [ML](./ML)
 - [DeepLearning](./DeepLearning)
-- [Python](./Python)
+- [Python](../Language/Python)
 - [R](./R)
 - [Math](./Math)
 

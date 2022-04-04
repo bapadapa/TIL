@@ -1,4 +1,24 @@
 {
   "python.pythonPath": "C:\\Users\\painc\\Anaconda3\\python.exe",
-  "jupyter.jupyterServerType": "local"
+  "jupyter.jupyterServerType": "local",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#080caf",
+    "activityBar.activeBorder": "#d50a0f",
+    "activityBar.background": "#080caf",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#d50a0f",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "sash.hoverBorder": "#080caf",
+    "statusBar.background": "#06097e",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#080caf",
+    "statusBarItem.remoteBackground": "#06097e",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#06097e",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#06097e99",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#06097e"
 }
